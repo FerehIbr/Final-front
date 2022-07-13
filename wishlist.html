@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winee</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="overlay-cart"></div>
+    <!-- Header -->
+    <section id="search" style="z-index: 16;">
+        <div class="container">
+            <div class="row search">
+                <div class="search-inp">
+                    <form method="post" enctype="multipart/form-data" id="searchForm" asp-controller="home"
+                        asp-action="SearchInput">
+                        <input type="text" id="searchBtn" placeholder="Search Our Store"><i
+                            class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </form>
+                </div>
+            </div>
+            <i class="fa-solid fa-xmark close-inp"></i>
+            <div id="productList" class="row">
+
+            </div>
+        </div>
+    </section>
+    <section id="navbar-sticky" class="sticky-header">
+        <div class="container">
+            <div class="row">
+                <ul class="navs">
+                    <li class="nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav">
+                        <a href="about.html" class="nav-link">About us</a>
+                    </li>
+                    <li class="nav">
+                        <a href="shop.html" class="nav-link">Shop</a>
+                    </li>
+                    <li class="nav">
+                        <a href="shop.html" class="nav-link">Our Wines <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="ourWinesMegamenu row">
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p10-1.jpeg" alt="">
+                                </div>
+                                <a href="~/">Bavaria Wine $750.00</a>
+                            </li>
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p15-2.jpeg" alt="">
+                                </div>
+                                <a href="~/">Dolce Vita Chardonnay $528.00</a>
+                            </li>
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p16-2.jpeg" alt="">
+                                </div>
+                                <a href="~/">Cras In Laoreet Libero $729.00</a>
+                            </li>
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p12-2.jpeg" alt="">
+                                </div>
+                                <a href="~/">Cras In Laoreet Libero $289.00</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="top-header">
+        <div class="container-fluid">
+            <div class="top-header row">
+                <div class="head left">
+                    <ul>
+                        <li>
+                            <a href="tel:(0000) 123 456789">
+                                <i class="fa-solid fa-phone"></i> (0000) 123 456789
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@example.com">
+                                <i class="fa-solid fa-envelope"></i> info@example.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="head right">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-arrow-pointer"></i>Store Location
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-truck"></i> Track Your Order
+                            </a>
+                        </li>
+                        <li>
+                            <select>
+                                <option value="USD" selected="selected">USD</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header id="header">
+        <div class="container-fluid">
+            <div class="header row">
+                <ul class="icon left col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <li>
+                        <i class="fa-solid fa-magnifying-glass open-search-div"></i>
+                    </li>
+                    <li style="margin-left: 30px;">
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                                style=" background-color: white; color: black; border: 0; outline: 0; box-shadow: 0px 0px 0px;"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </button>
+                            <ul class="dropdown-menu" style="outline: 0;" aria-labelledby="dropdownMenu2">
+                                <li><a href="login.html" style="color: black;">Login</a></li>
+                                <li><a href="register.html" style="color: black;">Register</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="logo col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <img src="images/logo.webp" alt="">
+                </div>
+                <ul class="icon right col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <li style="position: relative;margin-right: 30px;">
+                        <a href="wishlist.html" style="color: black;">
+                            <i class="fa-solid fa-heart"></i>
+                            <div class="wishlistCount"
+                                style="position: absolute; top: 10px; right: -22px; background-color: #c1001c; color: white; font-weight: 700; padding: 0 7px; border-radius: 50%;">
+                                0</div>
+                        </a>
+                    </li>
+                    <li style="position: relative;">
+                        <i class="fa-solid fa-cart-shopping shopping-cart-header"></i>
+                        <div class="notification"
+                            style="position: absolute; top: 10px; right: -22px; background-color: #c1001c; color: white; font-weight: 700; padding: 0 7px; border-radius: 50%;">
+                            0</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section id="phone-header">
+        <div class="container">
+            <p class="burger"><i class="fa-solid fa-bars"></i>Menu</p>
+        </div>
+    </section>
+    <div class="phone-side-menu">
+        <div class="image">
+            <img src="images/logo.svg" alt="">
+            <div class="close">
+                <i class="fa-solid fa-xmark sidebar-close-icon"></i>
+            </div>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Search for items…">
+            <button class="search-btn"><img src="images/icon-search.png" alt=""></button>
+        </div>
+        <div class="navs">
+            <div class="nav-btn">
+                <a href="home.html" class="head-text">Home</a>
+                <i class="fa-solid fa-angle-down up-icon"></i>
+                <i class="fa-solid fa-angle-up down-icon" style="display: none;"></i>
+                <ul class="nav-toggle">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 4</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 5</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 6</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="shop.html" class="head-text">Shop</a>
+                <i class="fa-solid fa-angle-down up-icon"></i>
+                <i class="fa-solid fa-angle-up down-icon" style="display: none;"></i>
+                <ul class="nav-toggle">
+                    <li><a href="shop.html">Shop Grid – Right Sidebar</a></li>
+                    <li><a href="shop.html">Shop Grid – Left Sidebar</a></li>
+                    <li><a href="shop.html">Shop List – Right Sidebar</a></li>
+                    <li><a href="shop.html">Shop List – Left Sidebar</a></li>
+                    <li><a href="shop.html">Shop - Wide</a></li>
+                    <li class="menu-shop-has-children" style="position: relative;">
+                        <a href="product.html" class="head-text2">Single Product</a>
+                        <i class="fa-solid fa-angle-down up-icon2"></i>
+                        <i class="fa-solid fa-angle-up down-icon2" style="display: none;"></i>
+                        <ul class="nav-toggle2">
+                            <li><a href="product.html">Product – Right Sidebar</a></li>
+                            <li><a href="product.html">Product – Left Sidebar</a></li>
+                            <li><a href="product.html">Product – No sidebar</a></li>
+                            <li><a href="product.html">Product – Vendor Infor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">Shop – Filter</a></li>
+                    <li><a href="shop.html">Shop – Wishlist</a></li>
+                    <li><a href="shop.html">Shop – Cart</a></li>
+                    <li><a href="shop.html">Shop – Checkout</a></li>
+                    <li><a href="shop.html">Shop – Compare</a></li>
+                    <li class="menu-shop-has-children">
+                        <a href="shop.html" class="head-text2">Shop Invoice</a>
+                        <i class="fa-solid fa-angle-down up-icon2"></i>
+                        <i class="fa-solid fa-angle-up down-icon2" style="display: none;"></i>
+                        <ul class="nav-toggle2">
+                            <li><a href="shop.html">Shop Invoice 1</a></li>
+                            <li><a href="shop.html">Shop Invoice 2</a></li>
+                            <li><a href="shop.html">Shop Invoice 3</a></li>
+                            <li><a href="shop.html">Shop Invoice 4</a></li>
+                            <li><a href="shop.html">Shop Invoice 5</a></li>
+                            <li><a href="shop.html">Shop Invoice 6</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="" class="head-text">Vendor</a>
+                <i class="fa-solid fa-angle-down up-icon"></i>
+                <i class="fa-solid fa-angle-up down-icon" style="display: none;"></i>
+                <ul class="nav-toggle" style="">
+                    <li><a href="vendors-grid.html">Vendors Grid</a></li>
+                    <li><a href="vendors-list.html">Vendors List</a></li>
+                    <li><a href="vendor-details-1.html">Vendor Details 01</a></li>
+                    <li><a href="vendor-details-2.html">Vendor Details 02</a></li>
+                    <li><a href="vendor-dashboard.html">Vendor Dashboard</a></li>
+                    <li><a href="vendor-guide.html">Vendor Guide</a></li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="#" class="head-text">Mega Menu</a>
+                <i class="fa-solid fa-angle-down up-icon"></i>
+                <i class="fa-solid fa-angle-up down-icon" style="display: none;"></i>
+                <ul class="nav-toggle">
+                    <li class="menu-item-has-children">
+                        <a href="#" class="head-text2">Women's Fashion</a>
+                        <i class="fa-solid fa-angle-down up-icon2"></i>
+                        <i class="fa-solid fa-angle-up down-icon2" style="display: none;"></i>
+                        <ul class="nav-toggle2">
+                            <li><a href="#">Dresses</a></li>
+                            <li><a href="#">Blouses &amp; Shirts</a></li>
+                            <li><a href="#">Hoodies &amp; Sweatshirts</a></li>
+                            <li><a href="#">Women's Sets</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="head-text2">Men's Fashion</a>
+                        <i class="fa-solid fa-angle-down up-icon2"></i>
+                        <i class="fa-solid fa-angle-up down-icon2" style="display: none;"></i>
+                        <ul class="nav-toggle2">
+                            <li><a href="#">Jackets</a></li>
+                            <li><a href="#">Casual Faux Leather</a></li>
+                            <li><a href="#">Genuine Leather</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="head-text2">Technology</a>
+                        <i class="fa-solid fa-angle-down up-icon2"></i>
+                        <i class="fa-solid fa-angle-up down-icon2" style="display: none;"></i>
+                        <ul class="nav-toggle2">
+                            <li><a href="#">Gaming Laptops</a></li>
+                            <li><a href="#">Ultraslim Laptops</a></li>
+                            <li><a href="#">Tablets</a></li>
+                            <li><a href="#">Laptop Accessories</a></li>
+                            <li><a href="#">Tablet Accessories</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="#" class="head-text">Blog</a>
+                <i class="fa-solid fa-angle-down up-icon"></i>
+                <i class="fa-solid fa-angle-up down-icon" style="display: none;"></i>
+                <ul class="nav-toggle">
+                    <li><a href="#">Blog Category Grid</a></li>
+                    <li><a href="#">Blog Category List</a></li>
+                    <li><a href="#">Blog Category Big</a></li>
+                    <li><a href="#">Blog Category Wide</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="head-text2">Single Product Layout</a>
+                        <i class="fa-solid fa-angle-down up-icon2"></i>
+                        <i class="fa-solid fa-angle-up down-icon2" style="display: none;"></i>
+                        <ul class="nav-toggle2">
+                            <li><a href="#">Left Sidebar</a></li>
+                            <li><a href="#">Right Sidebar</a></li>
+                            <li><a href="#">No Sidebar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="#" class="head-text">Pages</a>
+                <i class="fa-solid fa-angle-down up-icon"></i>
+                <i class="fa-solid fa-angle-up down-icon" style="display: none;"></i>
+                <ul class="nav-toggle">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Purchase Guide</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">404 Page</a></li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="#" class="head-text">language</a>
+                <i class="fa-solid fa-angle-down up-icon"></i>
+                <i class="fa-solid fa-angle-up down-icon" style="display: none;"></i>
+                <ul class="nav-toggle">
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">French</a></li>
+                    <li><a href="#">German</a></li>
+                    <li><a href="#">Spanish</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="loca">
+            <a href="#"><i class="fa-solid fa-location-dot"></i>Our location</a>
+            <a href="#"><i class="fa-solid fa-user-astronaut"></i>Log in/ Sign up</a>
+            <a href="#"><i class="fa-solid fa-headphones"></i>(+01) - 2345 - 6789</a>
+        </div>
+        <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icons">
+                <a href="#">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+        <p class="phone-text">Copyright 2021 © Nest. All rights reserved. Powered by AliThemes.</p>
+    </div>
+    <!-- Phone end -->
+    <section id="basket" class="header-cart">
+        <div class="basket">
+            <h2>Your Cart
+                <div class="cart-close-icon viewshopAbutton">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </h2>
+            <hr style="margin-bottom: 0px;">
+            <div class="left">
+                <div class="basket-content">
+                    <div class="headerBasket">
+
+                    </div>
+                    <div class="total">
+                        <span>Total</span>
+                        <span>$<span class="subtotalPrice">0</span>.00</span>
+                    </div>
+                    <hr>
+                    <p>Shipping, taxes, and discounts will be calculated at checkout.</p>
+                    <a href="checkout.html" class="proceed viewshopAbutton">Proceed to Checkout</a>
+                    <a href="basket.html" class="cart viewshopAbutton">View Cart </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="navbar">
+        <div class="container">
+            <div class="row">
+                <ul class="navs">
+                    <li class="nav">
+                        <a href="index.html" class=" nav-link">Home</a>
+                    </li>
+                    <li class="nav">
+                        <a href="about.html" class="nav-link">About us</a>
+                    </li>
+                    <li class="nav">
+                        <a href="shop.html" class="nav-link">Shop</a>
+                    </li>
+                    <li class="nav">
+                        <a href="shop.html" class="nav-link">Our Wines <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="ourWinesMegamenu row">
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p10-1.jpeg" alt="">
+                                </div>
+                                <a href="~/">Bavaria Wine $750.00</a>
+                            </li>
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p15-2.jpeg" alt="">
+                                </div>
+                                <a href="~/">Dolce Vita Chardonnay $528.00</a>
+                            </li>
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p16-2.jpeg" alt="">
+                                </div>
+                                <a href="~/">Cras In Laoreet Libero $729.00</a>
+                            </li>
+                            <li class="col-lg-3">
+                                <div class="image">
+                                    <img src="images/products/p12-2.jpeg" alt="">
+                                </div>
+                                <a href="~/">Cras In Laoreet Libero $289.00</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="blog.html" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Header end -->
+
+    <div class="container wishlist-container">
+        <table class="wishlist-table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Purchase</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody class="wishlist-body">
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <section id="cookies">
+        <div class="container">
+            <div class="row cookies ">
+                <div class="content">
+                    <span>Please click Accept Cookies to continue to use the site.</span>
+                    <a href="" class="viewshopAbutton">Accept</a>
+                    <a href="" class="viewshopAbutton">Decline</a>
+                    <button class="viewshopAbutton topBtn toTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="modal-prod">
+        <div class="container-fluid">
+
+            <div class="modal-prod row">
+                <div class="left-modal col-lg-6">
+                    <div class="swiper mySwiperModal">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="image">
+                                    <img src="images/product1.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image">
+                                    <img src="images/product2.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image">
+                                    <img src="images/product3.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button swiper-button-next-modal"></div>
+                    <div class="swiper-button swiper-button-prev-modal"></div>
+                </div>
+                <div class="right-modal col-lg-6">
+
+                    <div class="content">
+                        <h2>Scotch Whisky</h2>
+                        <form action="" id="product-detail-form">
+                            <div class="formElem price">
+                                <span>Price:</span>
+                                <span class="price-value"> $528.00</span>
+                            </div>
+                            <div class="formElem formElems sizes">
+                                <span>Size:</span>
+                                <a href="" class="active-det">L</a>
+                                <a href="">M</a>
+                                <a href="">S</a>
+                            </div>
+                            <div class="formElem formElems colors">
+                                <span>Color:</span>
+                                <a href="" class="active-det">
+                                    <img src="images/product1.webp" alt="">
+                                </a>
+                                <a href="">
+                                    <img src="images/product2.webp" alt="">
+                                </a>
+                                <a href="">
+                                    <img src="images/product3.webp" alt="">
+                                </a>
+                            </div>
+                            <div class="formElem speciality">
+                                <span>Specialty:</span>
+                                <div>Low Sodium</div>
+                            </div>
+                            <div class="formElem quantity">
+                                <span>Quantity:</span>
+                                <div class="count">
+                                    <a href="" class="dec">-</a>
+                                    <input type="text" class="prod-count" value="1">
+                                    <a href="" class="inc">+</a>
+                                </div>
+                            </div>
+                            <a href="" class="viewshopAbutton detail-btns">Sold Out</a>
+                            <a href="" class="viewshopAbutton detail-btns">Add to wishlist</a>
+                            <div class="formElem share">
+                                <span>Share with us:</span>
+                                <div class="shares">
+                                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                                    <a href=""><i class="fa-brands fa-pinterest"></i></a>
+                                    <a href=""><i class="fa-brands fa-google"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="row top">
+                <div class="footer-item col-sm-6 col-md-6 col-xl-3 col-lg-6">
+                    <h2>Help</h2>
+                    <ul class="footer-item-list">
+                        <li>
+                            <a href="contact.html">Search</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Help</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Information</a>
+                        </li>
+                        <li>
+                            <a href="about.html">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="shop.html">Shipping Details</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item col-sm-6 col-md-6 col-xl-3 col-lg-6">
+                    <h2>Support</h2>
+                    <ul class="footer-item-list">
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="shop.html">Careers</a>
+                        </li>
+                        <li>
+                            <a href="shop.html">Refunds & Returns</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">SDeliveries</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item col-sm-6 col-md-6 col-xl-3 col-lg-6">
+                    <h2>Information</h2>
+                    <ul class="footer-item-list">
+                        <li>
+                            <a href="contact.html">Search Terms</a>
+                        </li>
+                        <li>
+                            <a href="shop.html">Advanced Search</a>
+                        </li>
+                        <li>
+                            <a href="about.html">Help & FAQ's</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Store Location</a>
+                        </li>
+                        <li>
+                            <a href="checkout.html">Orders & Returns</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item col-sm-6 col-md-6 col-xl-3 col-lg-6">
+                    <h2>Contact Us</h2>
+                    <ul class="footer-item-list">
+                        <li class="last-list-item">
+                            <i class="fa-solid fa-house-chimney"></i>
+                            <span>No: 58 A, East Madison Street, Baltimore, MD, USA 4508</span>
+                        </li>
+                        <li class="last-list-item">
+                            <a href="tel:(0000)123456789">
+                                <i class="fa-solid fa-phone"></i>
+                                0000 - 123 - 456789
+                            </a>
+                        </li>
+                        <li class="last-list-item">
+                            <a href="mail:mail@example.com"><i class="fa-solid fa-envelope"></i>mail@example.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row bottom">
+                <div class="footer-bottom-item col-sm-6 left col-md-6 col-lg-6">
+                    <h2>Connect with us</h2>
+                    <ul class="left-list">
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-bottom-item right justify-content-xs-start text-sm-start col-sm-6 col-md-6 col-lg-6">
+                    <h2>Download our app</h2>
+                    <ul class="right-list">
+                        <li>
+                            <a href="#">
+                                <img src="images/footer-window.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/footer-google-play.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/footer-appstore.webp" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>
