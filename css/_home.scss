@@ -1702,7 +1702,32 @@ $secondd-font-family: "Quicksand", sans-serif;
     }
   }
 }
-
+#phone-menu {
+  box-shadow: 0px 5px 10px grey;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
+  background: white;
+  z-index: 99999;
+}
+#phone-menu .phone-menu-list {
+}
+#phone-menu .phone-menu-list .phone-menu-item {
+  width: 20%;
+  text-align: center;
+}
+#phone-menu .phone-menu-item .phone-menu-link {
+  font-family: "Text Me One";
+  color: #c5c5c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 @media (max-width: 1530px) {
   //Intro
   #intro {
@@ -2170,6 +2195,43 @@ $secondd-font-family: "Quicksand", sans-serif;
   }
 }
 @media (max-width: 576px) {
+  #phone-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+  .first-modal {
+    padding: 10px !important;
+    width: 300px !important;
+  }
+
+  .first-modal .content h3 {
+    font-size: 21px !important;
+    margin: 0px 0 0px 0 !important;
+  }
+
+  .first-modal .content h5 {
+    font-size: 13px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .first-modal .content form {
+    height: 30px !important;
+  }
+
+  .first-modal .content form .subscriber {
+    white-space: nowrap !important;
+    padding: 3px 0 !important;
+    font-size: 11px;
+  }
+  #top-header .top-header .head ul li a {
+    font-size: 6px;
+    margin: 0px;
+  }
+  #top-header .top-header .right ul li select {
+    font-size: 6px;
+    margin: 0px;
+  }
   //Header
   #header {
     .header {
